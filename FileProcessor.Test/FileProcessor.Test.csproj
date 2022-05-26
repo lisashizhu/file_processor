@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Moq" />
+    <None Remove="Microsoft.NET.Test.Sdk" />
+    <None Remove="xunit" />
+    <None Remove="xunit.runner.visualstudio" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Microsoft.EntityFrameworkCore.InMemory" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Moq" Version="4.18.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.17" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FileProcessor.Services\FileProcessor.Business.csproj" />
+    <ProjectReference Include="..\FileProcessor.Common\FileProcessor.Common.csproj" />
+    <ProjectReference Include="..\FileProcessor.Data\FileProcessor.Data.csproj" />
+    <ProjectReference Include="..\FileProcessorWebApplication\FileProcessor.WebApi.csproj" />
+  </ItemGroup>
+</Project>

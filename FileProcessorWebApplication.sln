@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 25.0.1703.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileProcessorWebApplication", "FileProcessorWebApplication\FileProcessorWebApplication.csproj", "{1BF1A388-25ED-4E15-9AC9-9C0A79B24410}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileProcessor.WebApi", "FileProcessorWebApplication\FileProcessor.WebApi.csproj", "{1BF1A388-25ED-4E15-9AC9-9C0A79B24410}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileProcessor.Business", "FileProcessor.Services\FileProcessor.Business.csproj", "{B4E1367B-DB2C-42F4-A840-1269C5B0D0B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileProcessor.Data", "FileProcessor.Data\FileProcessor.Data.csproj", "{FCC6BE0A-AB86-4C89-9AA8-0B2E6F576807}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileProcessor.Common", "FileProcessor.Common\FileProcessor.Common.csproj", "{DA810A0B-8EFF-4109-B872-3C8E697700DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileProcessor.Test", "FileProcessor.Test\FileProcessor.Test.csproj", "{0B901413-A576-4E1E-ABC6-D5708FD0A38F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{1BF1A388-25ED-4E15-9AC9-9C0A79B24410}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BF1A388-25ED-4E15-9AC9-9C0A79B24410}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BF1A388-25ED-4E15-9AC9-9C0A79B24410}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4E1367B-DB2C-42F4-A840-1269C5B0D0B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4E1367B-DB2C-42F4-A840-1269C5B0D0B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4E1367B-DB2C-42F4-A840-1269C5B0D0B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4E1367B-DB2C-42F4-A840-1269C5B0D0B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCC6BE0A-AB86-4C89-9AA8-0B2E6F576807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC6BE0A-AB86-4C89-9AA8-0B2E6F576807}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCC6BE0A-AB86-4C89-9AA8-0B2E6F576807}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCC6BE0A-AB86-4C89-9AA8-0B2E6F576807}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA810A0B-8EFF-4109-B872-3C8E697700DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA810A0B-8EFF-4109-B872-3C8E697700DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA810A0B-8EFF-4109-B872-3C8E697700DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA810A0B-8EFF-4109-B872-3C8E697700DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B901413-A576-4E1E-ABC6-D5708FD0A38F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B901413-A576-4E1E-ABC6-D5708FD0A38F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B901413-A576-4E1E-ABC6-D5708FD0A38F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B901413-A576-4E1E-ABC6-D5708FD0A38F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

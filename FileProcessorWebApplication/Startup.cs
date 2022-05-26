@@ -1,10 +1,18 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System.Text.Json.Serialization;
+using FileProcessor.Business;
+using FileProcessor.Data;
+using FileProcessor.Services;
+using FileProcessor.Services.Interfaces;
+using FileProcessor.WebApi.Filters;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using FileProcessor.Business.Models.Mappers;
 
 namespace FileProcessorWebApplication
 {
@@ -21,8 +29,18 @@ namespace FileProcessorWebApplication
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+                    options.JsonSerializerOptions.IgnoreNullValues = true;
+                });
 
+            services.AddMvc(options => options.Filters.Add(typeof(ExceptionFilter)));
+            services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Database")));
+            services.AddTransient<IProcess, CsvFileProcessor>();
+            services.AddTransient<IFileProcessorFactory>(provider => new FileProcessorFactory(provider));
+            services.AddAutoMapper(typeof(StoreOrderProfile));
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
